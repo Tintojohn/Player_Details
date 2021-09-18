@@ -22,4 +22,5 @@ urlpatterns = [
     path('', insertplayer, name='insert'),
     path('list/', player_list, name='list'),
     path('<int:Players_Id>/', edit, name='edit'),
+    path('delete/<int:Players_Id>', pl_delete, name='delete'),
 ]

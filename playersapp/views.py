@@ -30,3 +30,8 @@ def edit(request,Players_Id):
         if form.is_valid():
             form.save()
         return redirect('/list')
+
+def pl_delete(request, Players_Id):
+    pl = Players.objects.get(pk=Players_Id)
+    pl.delete()
+    return redirect('/list')
