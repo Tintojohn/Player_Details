@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
-from .views import insert_player
+from .views import insertplayer
 
 urlpatterns = [
-    path('', insert_player, name='insert'),
+    path('', insertplayer, name='insert'),
 ]
