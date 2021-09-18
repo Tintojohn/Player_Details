@@ -1,0 +1,26 @@
+{% extends "players/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<form action="" method="post" autocomplete="off">{% csrf_token %}
+    {{form.Players_Id|as_crispy_field}}
+    {{form.Player_Name|as_crispy_field}}
+    {{form.Player_Email|as_crispy_field}}
+    {{form.Country|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+           {{form.Game|as_crispy_field}}
+        </div>
+        <div class="col-md-8">
+            {{form.Score|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+    <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-save"></i> Submit</button>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'list' %}" class="btn btn-secondary btn-block btn-lg"><i class="fas fa-stream"></i>Back to List</a>
+        </div>
+    </div>
+</form>
+{% endblock content %}
