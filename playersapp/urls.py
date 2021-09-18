@@ -20,4 +20,5 @@ from .views import insertplayer
 
 urlpatterns = [
     path('', insertplayer, name='insert'),
+    path('list/', player_list, name='list'),
 ]
