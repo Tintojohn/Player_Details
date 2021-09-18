@@ -21,4 +21,5 @@ from .views import insertplayer
 urlpatterns = [
     path('', insertplayer, name='insert'),
     path('list/', player_list, name='list'),
+    path('<int:Players_Id>/', edit, name='edit'),
 ]

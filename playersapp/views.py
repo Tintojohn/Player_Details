@@ -18,3 +18,15 @@ def insertplayer(request):
 def player_list(request):
     list = Players.objects.all()
     return render(request, "players/players_details.html", {'p_list': list})
+
+def edit(request,Players_Id):
+    if request.method == 'GET':
+        pl = Players.objects.get(pk=Players_Id)
+        form = PlayersForm(instance=pl)
+        return render(request, "players/update.html", {'form': form})
+    else:
+        pl = Players.objects.get(pk=Players_Id)
+        form = PlayersForm(request.POST, instance=pl)
+        if form.is_valid():
+            form.save()
+        return redirect('/list')
