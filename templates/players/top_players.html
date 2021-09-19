@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Top Players Details</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="col-md-10 offset-md-1 mt-5">
+    <div class="jumbotron">
+  <h1 class="display-4">Top Players</h1>
+  <hr class="my-4">
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>ID</td>
+            <td>Player Name</td>
+            <td>Player Email</td>
+            <td>Country</td>
+            <td>Number of Games</td>
+            <td>Total Score</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in top_list %}
+        <tr>
+            <td>{{i.Players_Id}}</td>
+            <td>{{i.Player_Name}}</td>
+            <td>{{i.Player_Email}}</td>
+            <td>{{i.Country}}</td>
+            <td>{{i.games}} games</td>
+            <td>{{i.total}}</td>
+        </tr>
+    {%endfor%}
+    </tbody>
+</table>
+    </div>
+        <a href="{% url 'insert' %}" class="btn btn-secondary btn-block btn-lg">Add Player</a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
